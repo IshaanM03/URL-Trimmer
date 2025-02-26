@@ -1,9 +1,13 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const predSchema = new mongoose.Schema({
-    userID: {type: mongoose.Schema.Types.ObjectId, ref: "User", required: true},
-    matchID: {},
-    matchDate: {},
-    
+const PredictionSchema = new mongoose.Schema({
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    matchId: { type: String, required: true },
+    matchDate: { type: Date, required: true },
+    predictedWinner: { type: String, enum: ["Home", "Away", "Draw"], required: true }, 
+    predictedScore: { type: String }, 
+  }, { timestamps: true });
+  
+const Prediction = mongoose.model("Prediction", PredictionSchema);
 
-}, {timestamps: true})
+export default Prediction
