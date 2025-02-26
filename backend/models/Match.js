@@ -12,3 +12,4 @@ const MatchSchema = new mongoose.Schema({
   }, { timestamps: true });
 
   const Match = mongoose.model("Match", MatchSchema);
+  export default Match
