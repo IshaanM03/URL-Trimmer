@@ -4,8 +4,6 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv'
 
 dotenv.config();
-
-
 //get req body, check if user exists, create salt and hashed pwd, create new mongoDB object for user, gen token, res status and attach json token
 export const registerController = async (req, res) => {
     try {
@@ -46,3 +44,4 @@ export const loginController = async (req, res) => {
         res.status(400).json({error: "Server error"});
     }
 }
+
