@@ -35,9 +35,8 @@ export const loginController = async (req, res) => {
         const {username, password} = req.body;
         const user = await User.findOne({username});
         if (!user){
-            res.status(400).json({error: "Invalid credentials"});
+            return res.status(400).json({error: "Invalid credentials"});
         }
-
         const pwdMatch = await bcrypt.compare(password, user.password);
         if(!pwdMatch) return res.status(400).json({error: "Invalid credentials"});
         const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: "1d"});
