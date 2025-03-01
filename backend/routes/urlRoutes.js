@@ -2,7 +2,7 @@ import express from 'express';
 import axios from 'axios';
 import dotenv from 'dotenv';
 import {authenticate} from '../middleware/authMiddleware.js';
-import {getUserUrls, createUrl, getUrlDetails, updateUrl, deleteUrl} from '../controllers/'
+import {getUserUrls, createUrl, getUrlDetails, updateUrl, deleteUrl} from '../controllers/urlController.js'
 dotenv.config();
 
 //setup router
