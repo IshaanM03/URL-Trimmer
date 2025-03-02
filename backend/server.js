@@ -3,8 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js'
-// import urlRoutes from './routes/urlRoutes.js'
-// import redirectRoutes  from './routes/redirectroutes.js'
+import urlRoutes from './routes/urlRoutes.js'
+import redirectRoutes  from './routes/redirectroutes.js'
 
 //load env
 dotenv.config();
@@ -18,8 +18,8 @@ app.use(cors());
 connectDB();
 
 app.use('/api/auth', authRoutes);
-// app.use('/api/url', urlRoutes);
-// app.use('/', redirectRoutes);
+app.use('/api/url', urlRoutes);
+app.use('/', redirectRoutes);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
