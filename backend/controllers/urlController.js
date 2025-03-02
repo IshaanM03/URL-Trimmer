@@ -1,9 +1,12 @@
 import mongoose from 'mongoose';
-import URL from '../models/URL';
+import URL from '../models/URL.js';
 import shortid from 'shortid';
 import validator from 'validator';
-export const getUserUrls = (req, res) => {
 
+
+
+export const getUserUrls = (req, res) => {
+    
 };
 
 function isValidUrl(urlString) {
@@ -29,13 +32,10 @@ export const createUrl = async (req, res) => {
         res.status(201).json(newURL) 
     } catch (error) {
         console.log("Error creating URL: ", error);
-        res.status(400).json({error: "Server error"});
+        res.status(500).json({error: "Server error"});
     }
 };
 
-export const redirectURL = (req, res) => {
-    
-};
 
 export const updateUrl = (req, res) => {
 
