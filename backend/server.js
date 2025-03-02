@@ -3,7 +3,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js'
-import { authenticate } from './middleware/authMiddleware.js';
 // import urlRoutes from './routes/urlRoutes.js'
 
 //load env
