@@ -13,14 +13,13 @@ function isValidUrl(urlString) {
 
 export const getUserUrls = async (req, res) => {
     try {
-        const userURLs = await URL.find({user: req.user.id});
-        if (userURLs.length === 0) return res.status(404).json({error: "User has no URLs"});
-        res.status(200).json({userURLs});
+      const userURLs = await URL.find({ user: req.user.id });
+      res.status(200).json({ userURLs });
     } catch (error) {
-        console.log("There was an error: ", error);
-        res.status(500).json({error: "Server error"});
+      console.log("There was an error: ", error);
+      res.status(500).json({ error: "Server error" });
     }
-};
+  };
 //get originalURL from req.body, check if its valid url, if valid: genereate unique shortid, find user from jwt token (req.user is decoded jwt)
 export const createUrl = async (req, res) => {
     try {
