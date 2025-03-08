@@ -52,6 +52,8 @@ A full-stack URL shortener application built using the MERN stack. This project 
     ├── controllers
     │   ├── authControllers.js
     │   └── urlController.js
+    |   └── redirectController.js
+    |   
     ├── models
     │   ├── User.js
     │   └── URL.js
